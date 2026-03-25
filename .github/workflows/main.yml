@@ -1,0 +1,14 @@
+image: python:latest
+
+
+stages:
+ - cycode
+    
+
+cycode:
+ stage: cycode
+ script:
+  - pip3 install cycode
+    - echo "Deploying..."
+  - export CYCODE_CLI_VERBOSE=true
+ - cycode scan --scan-type sca path .
